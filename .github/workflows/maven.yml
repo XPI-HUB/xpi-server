@@ -50,4 +50,4 @@ jobs:
           # Artifact name
           name: checkstyle-reports
           # File path describing what artifact to upload
-          path: reports/checkstyle/**
+          path: '**/checkstyle-result.xml'
