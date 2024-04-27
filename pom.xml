@@ -87,7 +87,6 @@
                     <failsOnError>true</failsOnError>
                     <configLocation>config/checkstyle/checkstyle.xml</configLocation>
                     <linkXRef>false</linkXRef>
-                    <outputDirectory>config/</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>

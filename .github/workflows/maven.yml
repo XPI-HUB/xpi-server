@@ -42,7 +42,7 @@ jobs:
           distribution: 'corretto'
           cache: maven
       - name: Checkstyle
-        run: mvn checkstyle:checkstyle
+        run: mvn site
       # Upload reports
       - name: Upload Checkstyle Reports
         uses: actions/upload-artifact@v4
