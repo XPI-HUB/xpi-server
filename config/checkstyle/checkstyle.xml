@@ -74,10 +74,12 @@
         <module name="TypecastParenPad"/>
 <!--        WHITESPACE-->
     </module>
-<!--        SIZE VIOLATION-->
+<!--    SIZE VIOLATION-->
     <module name="LineLength">
         <property name="max" value="100"/>
     </module>
-<!--        SIZE VIOLATION-->
+<!--    SIZE VIOLATION-->
+<!--    MISCELLANEOUS-->
     <module name="NewlineAtEndOfFile"/>
+<!--    MISCELLANEOUS-->
 </module>
