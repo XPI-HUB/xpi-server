@@ -36,8 +36,7 @@ jobs:
       id: jacoco
       uses: madrapps/jacoco-report@v1.6.1
       with:
-        paths: '**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml',
-          '**/build/reports/jacoco/**/debugCoverage.xml'
+        paths: '**/build/reports/jacoco/testCoverage/testCoverage.xml'
         token: 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
         min-coverage-overall: 60
         min-coverage-changed-files: 40
