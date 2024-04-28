@@ -30,6 +30,24 @@ jobs:
     
     # pmd:
     #   needs: build
-    # checkstyle:
-    #   needs: build
-  
+  checkstyle:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'corretto'
+          cache: maven
+      - name: Checkstyle
+        run: mvn site
+      # Upload reports
+      - name: Upload Checkstyle Reports
+        uses: actions/upload-artifact@v4
+        with:
+          # Artifact name
+          name: checkstyle-reports
+          # File path describing what artifact to upload
+          path: '**/checkstyle-result.xml'
