@@ -27,6 +27,20 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: jacoco-report
+        path: '**/target/site/jacoco/index.html'
+    - name: Add coverage to PR
+      id: jacoco
+      uses: madrapps/jacoco-report@v1.6.1
+      with:
+        paths: '**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml',
+          '**/build/reports/jacoco/**/debugCoverage.xml'
+        token: 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
+        min-coverage-overall: 60
+        min-coverage-changed-files: 40
     
     # pmd:
     #   needs: build
@@ -50,4 +64,4 @@ jobs:
           # Artifact name
           name: checkstyle-reports
           # File path describing what artifact to upload
-          path: '**/checkstyle-result.xml'
+          path: '**/target/site/checkstyle.html'
