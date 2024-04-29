@@ -36,10 +36,12 @@ jobs:
       id: jacoco
       uses: madrapps/jacoco-report@v1.6.1
       with:
-        paths: '**/build/reports/jacoco/testCoverage/testCoverage.xml'
-        token: ${{ secrets.GH_TOKEN }}
-        min-coverage-overall: 60
-        min-coverage-changed-files: 40
+        paths: |
+          ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
+          ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
+        token: ${{ secrets.GITHUB_TOKEN }}
+        min-coverage-overall: 40
+        min-coverage-changed-files: 60
 
     # pmd:
     #   needs: build
