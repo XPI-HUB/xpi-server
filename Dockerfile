@@ -1,4 +1,4 @@
 FROM openjdk:21
 EXPOSE 8080
-ADD target/springboot-images-new.jar springboot-images-new.jar
-ENTRYPOINT ["java","-jar","/springboot-images-new.jar"]
+ADD target/xpi-server-0.0.1-SNAPSHOT.jar xpi-server-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/xpi-server-0.0.1-SNAPSHOT.jar"]
