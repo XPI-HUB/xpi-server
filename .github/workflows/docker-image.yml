@@ -15,4 +15,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: user/app:latest
+          tags: avinash14022002/xpi:latest
