@@ -5,14 +5,15 @@ jobs:
   login:
     runs-on: ubuntu-latest
     steps:
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v5
-      with:
-        image: avinash14022002/xpi
-        tags: latest
-        registry: docker.io
-        dockerfile: Dockerfile
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - uses: actions/checkout@v3
+        name: Check out code
+    
+      - uses: mr-smithers-excellent/docker-build-push@v6
+        name: Build & push Docker image
+        with:
+          image: repo/image
+          tags: v1, latest
+          registry: registry-url.io
+          dockerfile: Dockerfile.ci
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
