@@ -18,6 +18,11 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+  JaCoCo:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
     - name: Generate JaCoCo badge
       id: jacoco
       uses: cicirello/jacoco-badge-generator@v2
@@ -65,7 +70,7 @@ jobs:
     # pmd:
     #   needs: build
   checkstyle:
-    needs: build
+    needs: [build, JaCoCo]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -85,8 +90,10 @@ jobs:
           name: checkstyle-reports
           # File path describing what artifact to upload
           path: '**/target/site/checkstyle.html'
+
+          
   docker:
-    needs: [build, checkstyle]
+    needs: [build, JaCoCo, checkstyle]
     runs-on: ubuntu-latest
     steps:
     - name: Login to Docker Hub
