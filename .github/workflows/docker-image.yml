@@ -101,7 +101,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build Docker image
-      run: docker build -t avinash14022002/xpi-server:latest Dockerfile
+      run: docker build -t avinash14022002/xpi-server:latest .
 
     - name: Push Docker image
       run: docker push avinash14022002/xpi-server:latest
