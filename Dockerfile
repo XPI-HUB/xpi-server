@@ -5,12 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-# Build the Spring Boot application
-RUN mvn clean install
-
-# Create a slimmer runtime image
-FROM openjdk:21
-
 # Copy the JAR file from the builder stage
 COPY --from=builder /app/target/*.jar app.jar
 
