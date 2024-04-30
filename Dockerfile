@@ -5,6 +5,6 @@
 # # Use a base image with Java 11
 FROM openjdk:21
 WORKDIR /app
-COPY target/your-application.jar app.jar
+COPY target/xpi-server-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
