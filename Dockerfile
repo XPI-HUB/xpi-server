@@ -1,10 +1,24 @@
-# FROM openjdk:21
-# EXPOSE 8080
-# ADD target/springboot-images-new.jar springboot-images-new.jar
-# ENTRYPOINT ["java","-jar","/springboot-images-new.jar"]
-# # Use a base image with Java 11
-FROM openjdk:21
+ROM openjdk:21 AS builder
+
+# Copy project files to the builder stage
 WORKDIR /app
-COPY target/xpi-server-0.0.1-SNAPSHOT.jar app.jar
+
+COPY . .
+
+# Build the Spring Boot application
+RUN mvn clean install
+
+# Create a slimmer runtime image
+FROM openjdk:21
+
+# Copy the JAR file from the builder stage
+COPY --from=builder /app/target/*.jar app.jar
+
+# Set the working directory for the application
+WORKDIR /app
+
+# Expose the port your Spring Boot app uses (e.g., 8080)
 EXPOSE 8080
+
+# Run the application on startup
 CMD ["java", "-jar", "app.jar"]
