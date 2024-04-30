@@ -86,7 +86,7 @@ jobs:
           # File path describing what artifact to upload
           path: '**/target/site/checkstyle.html'
   docker:
-  needs: build
+    needs: build
     runs-on: ubuntu-latest
     steps:
       -
