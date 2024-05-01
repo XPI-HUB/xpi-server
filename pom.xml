@@ -147,7 +147,6 @@
                         <phase>test</phase>
                         <goals>
                             <goal>report</goal>
->>>>>>> 3a3a6ae7f486646246bca4bd4c020e82c18aa3b6
                         </goals>
                     </execution>
                 </executions>
