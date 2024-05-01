@@ -85,7 +85,6 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.12.1</version>
             </plugin>
-<<<<<<< HEAD
             <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -108,8 +107,6 @@
                     </execution>
                 </executions>
             </plugin>
-=======
->>>>>>> 3a3a6ae7f486646246bca4bd4c020e82c18aa3b6
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -128,8 +125,10 @@
                     <execution>
                         <goals>
                             <goal>check</goal>
-<<<<<<< HEAD
-=======
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
