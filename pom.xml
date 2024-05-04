@@ -64,6 +64,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
+                    <argLine>-XX:+EnableDynamicAgentLoading</argLine>
                 </configuration>
             </plugin>
             <plugin>
@@ -83,6 +84,50 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.12.1</version>
+            </plugin>
+            <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.12</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <!-- attached to Maven test phase -->
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.21.2</version>
+                <configuration>
+                    <!-- failOnViolation is actually true by default, but can be disabled -->
+                    <failOnViolation>true</failOnViolation>
+                    <!-- printFailingErrors is pretty useful -->
+                    <printFailingErrors>true</printFailingErrors>
+                    <failurePriority>1</failurePriority>
+                    <rulesets>
+                        <ruleset>config/codeanalysis/pmd.xml</ruleset>
+                    </rulesets>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
             <plugin>
@@ -127,6 +172,22 @@
                     <failsOnError>true</failsOnError>
                     <configLocation>config/checkstyle/checkstyle.xml</configLocation>
                     <linkXRef>false</linkXRef>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.21.2</version>
+                <configuration>
+                    <!-- failOnViolation is actually true by default, but can be disabled -->
+                    <failOnViolation>true</failOnViolation>
+                    <!-- printFailingErrors is pretty useful -->
+                    <printFailingErrors>true</printFailingErrors>
+                    <failurePriority>1</failurePriority>
+                    <rulesets>
+                        <ruleset>config/codeanalysis/pmd.xml</ruleset>
+                    </rulesets>
                 </configuration>
             </plugin>
         </plugins>

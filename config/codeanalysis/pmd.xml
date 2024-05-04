@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<ruleset name="XPI PMD Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        XPI PMD Rules
+    </description>
+
+
+    <rule ref="category/java/errorprone.xml/EmptyCatchBlock"
+          message="Empty catch blocks should be avoided" >
+        <priority>5</priority>
+    </rule>
+    <rule ref="category/java/performance.xml/AddEmptyString" />
+    <rule ref="category/java/performance.xml/AppendCharacterWithChar"
+        message="Use char quotes" >
+        <priority>3</priority>
+    </rule>
+    <rule ref="category/java/performance.xml/UseIndexOfChar" message="Use char quotes" />
+    <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops"
+          message="Avoid Instantiating Objects In Loops" >
+        <priority>1</priority>
+    </rule>
+    <rule ref="category/java/performance.xml/InefficientEmptyStringCheck" />
+    <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"
+        message="Minimum 3 cases required to use a switch statement" >
+        <properties>
+            <property name="minimumNumberCaseForASwitch" value="3" />
+        </properties>
+    </rule>
+    <rule ref="category/java/design.xml/CollapsibleIfStatements" />
+</ruleset>
