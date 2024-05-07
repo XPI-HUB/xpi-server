@@ -1,11 +1,13 @@
 package com.xpi.xpiserver.service.standardData;
 
-import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
 
 /*
  * User: Avinash Vijayvargiya
@@ -16,23 +18,31 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class TimeZoneService {
 
-    public HashMap<String, String> getTimeZone() {
+    public ResponseEntity<HashMap<String, String>> getTimeZone() {
         HashMap<String, String> mapOfTimeZone = new HashMap<>();
-        for (String id : TimeZone.getAvailableIDs()) {
-            mapOfTimeZone.put(id, getTimeZoneById(TimeZone.getTimeZone(id)));
+        try {
+            for (String id : TimeZone.getAvailableIDs()) {
+                mapOfTimeZone.put(id, getTimeZoneById(TimeZone.getTimeZone(id)));
+            }
+            return new ResponseEntity<>(mapOfTimeZone, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(mapOfTimeZone, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return mapOfTimeZone;
     }
 
-    public HashMap<String, String> getTimeZoneById(List<String> timeZoneIds) {
+    public ResponseEntity<HashMap<String, String>> getTimeZoneById(final List<String> timeZoneIds) {
         HashMap<String, String> mapOfTimeZone = new HashMap<>();
-        for (String id : timeZoneIds) {
-            mapOfTimeZone.put(id, getTimeZoneById(TimeZone.getTimeZone(id)));
+        try {
+            for (String id : timeZoneIds) {
+                mapOfTimeZone.put(id, getTimeZoneById(TimeZone.getTimeZone(id)));
+            }
+            return new ResponseEntity<>(mapOfTimeZone, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(mapOfTimeZone, HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        return mapOfTimeZone;
     }
 
-    private String getTimeZoneById(TimeZone timeZone) {
+    private String getTimeZoneById(final TimeZone timeZone) {
         long hours = TimeUnit.MILLISECONDS
                 .toHours(timeZone.getRawOffset());
         long minutes = TimeUnit.MILLISECONDS

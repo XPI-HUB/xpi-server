@@ -1,11 +1,15 @@
 package com.xpi.xpiserver.controller.standardData;
 
 import com.xpi.xpiserver.service.standardData.TimeZoneService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.HashMap;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /*
  * User: Avinash Vijayvargiya
@@ -20,12 +24,13 @@ public class TimeZoneController {
     private TimeZoneService timeZoneService;
 
     @GetMapping("/getTimeZone")
-    public HashMap<String, String> getTimeZones() {
+    public ResponseEntity<HashMap<String, String>> getTimeZones() {
         return timeZoneService.getTimeZone();
     }
 
     @PostMapping("/getTimeZoneFromIds")
-    public HashMap<String, String> getTimeZoneFromIds(@RequestBody List<String> timeZoneIds) {
+    public ResponseEntity<HashMap<String, String>> getTimeZoneFromIds(
+            @RequestBody final List<String> timeZoneIds) {
         return timeZoneService.getTimeZoneById(timeZoneIds);
     }
 }

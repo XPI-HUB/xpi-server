@@ -3,43 +3,43 @@
     "name": "Afghanistan",
     "dialCode": "+93",
     "isoCode": "AF",
-    "flag": "🇦🇫"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/af.svg"
   },
   {
     "name": "Aland Islands",
     "dialCode": "+358",
     "isoCode": "AX",
-    "flag": "🇦🇽"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ax.svg"
   },
   {
     "name": "Albania",
     "dialCode": "+355",
     "isoCode": "AL",
-    "flag": "🇦🇱"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/al.svg"
   },
   {
     "name": "Algeria",
     "dialCode": "+213",
     "isoCode": "DZ",
-    "flag": "🇩🇿"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/dz.svg"
   },
   {
     "name": "American Samoa",
     "dialCode": "+1684",
     "isoCode": "AS",
-    "flag": "🇦🇸"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/as.svg"
   },
   {
     "name": "Andorra",
     "dialCode": "+376",
     "isoCode": "AD",
-    "flag": "🇦🇩"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ad.svg"
   },
   {
     "name": "Angola",
     "dialCode": "+244",
     "isoCode": "AO",
-    "flag": "🇦🇴"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ao.svg"
   },
   {
     "name": "Anguilla",
@@ -1395,85 +1395,84 @@
     "name": "United Kingdom",
     "dialCode": "+44",
     "isoCode": "GB",
-    "flag": "https://cdn.kcak11.com/CountryFlags/countries/gb.svg",
-    "emoji": ""
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/gb.svg"
   },
   {
     "name": "United States",
     "dialCode": "+1",
     "isoCode": "US",
-    "flag": "🇺🇸"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/us.svg"
   },
   {
     "name": "United States Minor Outlying Islands",
     "dialCode": "+246",
     "isoCode": "UMI",
-    "flag": "🇺🇸"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/umi.svg"
   },
   {
     "name": "Uruguay",
     "dialCode": "+598",
     "isoCode": "UY",
-    "flag": "🇺🇾"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/uy.svg"
   },
   {
     "name": "Uzbekistan",
     "dialCode": "+998",
     "isoCode": "UZ",
-    "flag": "🇺🇿"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/uz.svg"
   },
   {
     "name": "Vanuatu",
     "dialCode": "+678",
     "isoCode": "VU",
-    "flag": "🇻🇺"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/vu.svg"
   },
   {
     "name": "Venezuela, Bolivarian Republic of Venezuela",
     "dialCode": "+58",
     "isoCode": "VE",
-    "flag": "🇻🇪"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ve.svg"
   },
   {
     "name": "Vietnam",
     "dialCode": "+84",
     "isoCode": "VN",
-    "flag": "🇻🇳"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/vn.svg"
   },
   {
     "name": "Virgin Islands, British",
     "dialCode": "+1284",
     "isoCode": "VG",
-    "flag": "🇻🇬"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/vg.svg"
   },
   {
     "name": "Virgin Islands, U.S.",
     "dialCode": "+1340",
     "isoCode": "VI",
-    "flag": "🇻🇮"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/vi.svg"
   },
   {
     "name": "Wallis and Futuna",
     "dialCode": "+681",
     "isoCode": "WF",
-    "flag": "🇼🇫"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/wf.svg"
   },
   {
     "name": "Yemen",
     "dialCode": "+967",
     "isoCode": "YE",
-    "flag": "🇾🇪"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ye.svg"
   },
   {
     "name": "Zambia",
     "dialCode": "+260",
     "isoCode": "ZM",
-    "flag": "🇿🇲"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/zm.svg"
   },
   {
     "name": "Zimbabwe",
     "dialCode": "+263",
     "isoCode": "ZW",
-    "flag": "🇿🇼"
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/zw.svg"
   }
 ]

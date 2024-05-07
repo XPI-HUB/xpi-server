@@ -1,7 +1,7 @@
 package com.xpi.xpiserver.model.standardData;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
 /*
  * User: Avinash Vijayvargiya
@@ -9,11 +9,14 @@ import lombok.Data;
  * Time: 3:25am
  */
 @AllArgsConstructor
-@Data
+@Getter
 public class Countries {
 
     private String name;
+
     private String dialCode;
+
     private String isoCode;
+
     private String flag;
 }

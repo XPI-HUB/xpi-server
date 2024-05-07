@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Afghanistan",
+    "dialCode": "+93",
+    "isoCode": "AF",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/af.svg"
+  },
+  {
+    "name": "Aland Islands",
+    "dialCode": "+358",
+    "isoCode": "AX",
+    "flag": "https://cdn.kcak11.com/CountryFlags/countries/ax.svg"
+  }
+]
