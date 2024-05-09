@@ -16,6 +16,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.atMostOnce;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.when;
 
 
@@ -46,10 +50,9 @@ class CountriesControllerTest {
                 .thenReturn(new ResponseEntity<>(expectedCountriesList, HttpStatus.OK));
         ResponseEntity<List<Countries>> actualCountriesList = countriesController.getAllCountries();
 
-        Mockito.verify(countriesService).getAllCountries();
+        Mockito.verify(countriesService, atMostOnce()).getAllCountries();
         assertEquals(actualCountriesList.getBody(), expectedCountriesList);
         assertEquals(HttpStatus.OK, actualCountriesList.getStatusCode());
         assertEquals(2, Objects.requireNonNull(actualCountriesList.getBody()).size());
-        assertNotNull(actualCountriesList.getBody());
     }
 }

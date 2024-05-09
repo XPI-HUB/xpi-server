@@ -34,7 +34,7 @@ class TimeZoneControllerTest {
 
     @Test
     public void test_getTimeZoneByIds() {
-        List<String> listOfTimeZone = List.of("Africa/Abidjan");
+        List<String> listOfTimeZone = List.of("Asia/Aden");
         HashMap<String, String> actualMapOfTimeZone = new HashMap<>();
         actualMapOfTimeZone.put("Asia/Aden", "GMT+3:00");
         when(timeZoneService.getTimeZoneById(listOfTimeZone))
