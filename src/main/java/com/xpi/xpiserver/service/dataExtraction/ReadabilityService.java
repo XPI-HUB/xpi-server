@@ -48,7 +48,9 @@ public class ReadabilityService {
                     "\nSimple Measure of Gobbledygook: %s (about %d year olds)" +
                     "\nColeman-Liau index: %s (about %d year olds)" +
                     "\n\nThis text should be understood in average by %s year olds.")
-                    .formatted(wordCount, sentenceCount, charCount, syllableCount, polySyllableCount, scoreARI, ageARI, scoreFK, ageFK, scoreSMOG, ageSMOG, scoreCL, ageCL, avg);
+                    .formatted(wordCount, sentenceCount, charCount, syllableCount,
+                        polySyllableCount, scoreARI, ageARI, scoreFK, ageFK, scoreSMOG,
+                        ageSMOG, scoreCL, ageCL, avg);
         } catch (ArithmeticException exception) {
             System.out.println("Empty file");
         }
